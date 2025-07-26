@@ -1,6 +1,6 @@
 import time
 from decimal import Decimal
-
+import random
 import msgpack
 from eth_account import Account
 from eth_account.messages import encode_typed_data
@@ -462,7 +462,7 @@ def float_to_int(x: float, power: int) -> int:
 
 
 def get_timestamp_ms() -> int:
-    return int(time.time() * 1000)
+    return int(time.time() * 1000) + random.randint(0, 500)
 
 
 def order_request_to_order_wire(order: OrderRequest, asset: int) -> OrderWire:
